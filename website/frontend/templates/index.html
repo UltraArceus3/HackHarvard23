@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <div class="col">
-        <h2>Video Playlist</h2>
+    <div class="col vid-playlist">
+        <h2>Playlist</h2>
         <div class="list-group">
             {% for video in video_urls %}
-                <a href="#" class="list-group-item list-group-item-action video-link" data_video="{{ video }}">{{ loop.index }} - {{ video }}</a>
+                <a href="#" class="list-group-item list-group-item-action video-link" data_video="{{ video }}" transcript="{{ transcriptions[loop.index0] }}">
+                    {{ loop.index }} - {{ video }} 
+                </a>
             {% endfor %}
         </div>
     </div>
-    <div class="col">
-        <h2>Video Player</h2>
+    <div class="vid-col">
+        <br />
         <div>
             <video id="player" controls playsinline>
-                <source src="/static/{{ data_video }}" type="video/mp4">
+                <source src="/static/" type="video/mp4">
             </video>
         </div>
     </div>
     <div class="col">
-        <h2>Transcriptions</h2>
-        <div class="transcriptions">
-            {% for transcription in transcriptions %}
-                <p>{{ transcription }}</p>
-            {% endfor %}
+        <h2>Summarization</h2>
+        <div class="transcription">
+            <p>None</p>
         </div>
     </div>
 
