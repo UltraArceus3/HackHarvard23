@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-access_token = "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"
+access_token = ""
 
 
 
